@@ -1,0 +1,15 @@
+<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
+    <div align="center" *ngIf="productsService.filteredProducts?.length === 0">
+        <p>No se encontraron productos con este <strong>nombre</strong> o <strong>categoría</strong></p>
+    </div>
+    <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+        <a *ngFor="let product of productsService.filteredProducts" [routerLink]="['/item', product.cod]"
+            class="animated fadeIn rk-item ae-masonry__item">
+            <img src="assets/products/{{ product.url }}.jpg" alt="Imagen del producto">
+            <div class="item-meta">
+                <h2>{{ product.title }}</h2>
+                <p>{{ product.category }}</p>
+            </div>
+        </a>
+    </div>
+</section>

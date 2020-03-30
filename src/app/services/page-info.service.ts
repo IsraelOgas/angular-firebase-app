@@ -19,9 +19,7 @@ export class PageInfoService {
   private loadPageInfo() {
     this.http.get('assets/data/data.json')
       .subscribe((res: InfoPage) => {
-        // this.loaded = true;
         this.pageInfo = res;
-        console.log(this.pageInfo);
       })
   }
 
@@ -30,7 +28,6 @@ export class PageInfoService {
     .subscribe((res: any[]) => {
       this.loaded = true;
       this.teamwork = res;
-      console.log(this.teamwork);
     })
   }
 }
